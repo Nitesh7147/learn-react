@@ -21,6 +21,7 @@ const Body = () => {
   // react variable is kind of a state variable.
   // Every component in react maintains a state, so we can put variables on to the state and every time you have to create some local
   // variables you use state in it
+  // to keep our UI in sync with the state for that syncing we use state variable.
   const [searchText, setSearchText] = useState(""); // searchText is a local state variable
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -38,6 +39,7 @@ const Body = () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING") 
     const json = await data.json();
     console.log(json);
+    // optional chaining - ?
     setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
