@@ -21,6 +21,7 @@ const Body = () => {
   // react variable is kind of a state variable.
   // Every component in react maintains a state, so we can put variables on to the state and every time you have to create some local
   // variables you use state in it
+  // to keep our UI in sync with the state for that syncing we use state variable.
   const [searchText, setSearchText] = useState(""); // searchText is a local state variable
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [allRestaurants, setAllRestaurants] = useState([]);
